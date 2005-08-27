@@ -1,4 +1,4 @@
-# $Rev: 3356 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3356 $, $Date: 2005-08-27 17:42:47 $
 #
 Summary:	mkfontscale application
 Summary(pl):	Aplikacja mkfontscale
@@ -15,7 +15,7 @@ BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	xorg-lib-libfontenc-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/mkfontscale-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
