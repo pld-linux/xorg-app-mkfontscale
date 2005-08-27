@@ -1,5 +1,3 @@
-# $Rev: 3356 $, $Date: 2005-08-27 17:42:47 $
-#
 Summary:	mkfontscale application
 Summary(pl):	Aplikacja mkfontscale
 Name:		xorg-app-mkfontscale
@@ -16,10 +14,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	xorg-lib-libfontenc-devel
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
-BuildRoot:	%{tmpdir}/mkfontscale-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 mkfontscale application.
@@ -27,10 +22,8 @@ mkfontscale application.
 %description -l pl
 Aplikacja mkfontscale.
 
-
 %prep
 %setup -q -n mkfontscale-%{version}
-
 
 %build
 %{__aclocal}
@@ -41,17 +34,14 @@ Aplikacja mkfontscale.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
