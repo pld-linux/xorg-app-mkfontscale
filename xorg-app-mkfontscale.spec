@@ -1,19 +1,19 @@
 Summary:	mkfontscale application
 Summary(pl):	Aplikacja mkfontscale
 Name:		xorg-app-mkfontscale
-Version:	0.99.1
+Version:	0.99.2
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/mkfontscale-%{version}.tar.bz2
-# Source0-md5:	841fdb77891c0a47f2d50d13e4bc1bfc
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/mkfontscale-%{version}.tar.bz2
+# Source0-md5:	35f2b80b163894f0067391cf5c4f219d
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libfontenc-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.1
+BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +38,7 @@ Aplikacja mkfontscale.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	appmandir=%{_mandir}/man1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
