@@ -1,12 +1,12 @@
 Summary:	mkfontscale application
 Summary(pl):	Aplikacja mkfontscale
 Name:		xorg-app-mkfontscale
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/mkfontscale-%{version}.tar.bz2
-# Source0-md5:	e31d06057784af5e8f2479c0de49e313
+# Source0-md5:	1d608771aca9695b828cec1e34178fd1
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
