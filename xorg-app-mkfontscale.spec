@@ -1,5 +1,5 @@
 Summary:	mkfontscale application
-Summary(pl.UTF-8):   Aplikacja mkfontscale
+Summary(pl.UTF-8):	Aplikacja mkfontscale
 Name:		xorg-app-mkfontscale
 Version:	1.0.3
 Release:	1
