@@ -1,5 +1,5 @@
-Summary:	mkfontscale application
-Summary(pl.UTF-8):	Aplikacja mkfontscale
+Summary:	mkfontscale application - create an index of scalable font files for X
+Summary(pl.UTF-8):	Aplikacja mkfontscale - tworzenie indeksu plików fontów skalowalnych dla X
 Name:		xorg-app-mkfontscale
 Version:	1.0.3
 Release:	1
@@ -19,10 +19,16 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-mkfontscale application.
+For each directory argument, mkfontscale reads all of the scalable
+font files in the directory. For every font file found, an X11 font
+name (XLFD) is generated, and is written together with the file name
+to a file fonts.scale in the directory.
 
 %description -l pl.UTF-8
-Aplikacja mkfontscale.
+Dla każdego argumentu będącego katalogiem mkfontscale odczytuje
+wszystkie pliki fontów skalowalnych znajdujących się w danym katalogu.
+Dla każdego pliku fontu generuje nazwę fontu X11 (XLFD) i zapisuje ją
+wraz z nazwą pliku fontu do pliku fonts.scale w katalogu.
 
 %prep
 %setup -q -n mkfontscale-%{version}
