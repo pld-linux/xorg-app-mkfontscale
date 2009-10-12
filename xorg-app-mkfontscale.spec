@@ -10,25 +10,22 @@ Source0:	http://xorg.freedesktop.org/releases/individual/app/mkfontscale-%{versi
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	bzip2-devel
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libfontenc-devel
 BuildRequires:	xorg-proto-xproto-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-For each directory argument, mkfontscale reads all of the scalable
-font files in the directory. For every font file found, an X11 font
-name (XLFD) is generated, and is written together with the file name
-to a file fonts.scale in the directory.
+mkfontscale creates the fonts.scale and fonts.dir index files used by
+the legacy X11 font system.
 
 %description -l pl.UTF-8
-Dla każdego argumentu będącego katalogiem mkfontscale odczytuje
-wszystkie pliki fontów skalowalnych znajdujących się w danym katalogu.
-Dla każdego pliku fontu generuje nazwę fontu X11 (XLFD) i zapisuje ją
-wraz z nazwą pliku fontu do pliku fonts.scale w katalogu.
+mkfontscale tworzy pliki indeksów fonts.scale i fonts.dir używane
+przez stary system fontów X11.
 
 %prep
 %setup -q -n mkfontscale-%{version}
@@ -38,7 +35,8 @@ wraz z nazwą pliku fontu do pliku fonts.scale w katalogu.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--with-bzip2
 
 %{__make}
 
