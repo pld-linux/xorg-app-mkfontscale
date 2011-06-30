@@ -1,12 +1,12 @@
 Summary:	mkfontscale application - create an index of scalable font files for X
 Summary(pl.UTF-8):	Aplikacja mkfontscale - tworzenie indeksu plików fontów skalowalnych dla X
 Name:		xorg-app-mkfontscale
-Version:	1.0.8
+Version:	1.0.9
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/mkfontscale-%{version}.tar.bz2
-# Source0-md5:	5210c9385c6cc4a00ce829d8dc9c819b
+# Source0-md5:	3d1dc487f3e859f4e5c46540cb49abd3
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
