@@ -1,12 +1,12 @@
-Summary:	mkfontscale application - create an index of scalable font files for X
-Summary(pl.UTF-8):	Aplikacja mkfontscale - tworzenie indeksu plików fontów skalowalnych dla X
+Summary:	mkfontscale and mkfontdir applications - create an index of font files for X
+Summary(pl.UTF-8):	Aplikacje mkfontscale i mkfontdir - tworzenie indeksu plików fontów dla X
 Name:		xorg-app-mkfontscale
-Version:	1.1.3
+Version:	1.2.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	https://xorg.freedesktop.org/releases/individual/app/mkfontscale-%{version}.tar.bz2
-# Source0-md5:	987c438e79f5ddb84a9c5726a1610819
+# Source0-md5:	efd40fd15dc5fc97c7b50cffbc1e7663
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -17,15 +17,25 @@ BuildRequires:	xorg-lib-libfontenc-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.25
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	zlib-devel
+Provides:	xorg-app-mkfontdir = %{version}-%{release}
+Obsoletes:	xorg-app-mkfontdir < 1.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 mkfontscale creates the fonts.scale and fonts.dir index files used by
 the legacy X11 font system.
 
+mkfontdir creates the fonts.dir files needed by the legacy X server
+core font system. The current implementation is a simple wrapper
+script around the mkfontscale program, which must be installed first.
+
 %description -l pl.UTF-8
 mkfontscale tworzy pliki indeksów fonts.scale i fonts.dir używane
 przez stary system fontów X11.
+
+mkfontdir tworzy pliki fonts.dir wymagane przez stary system fontów
+serwera X. Aktualna implementacja to prosty skrypt obudowujący program
+mkfontscale, który musi być wcześniej zainstalowany.
 
 %prep
 %setup -q -n mkfontscale-%{version}
@@ -51,6 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
+%attr(755,root,root) %{_bindir}/mkfontdir
 %attr(755,root,root) %{_bindir}/mkfontscale
+%{_mandir}/man1/mkfontdir.1*
 %{_mandir}/man1/mkfontscale.1*
