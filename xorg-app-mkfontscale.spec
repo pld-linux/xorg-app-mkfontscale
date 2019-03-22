@@ -1,12 +1,12 @@
 Summary:	mkfontscale and mkfontdir applications - create an index of font files for X
 Summary(pl.UTF-8):	Aplikacje mkfontscale i mkfontdir - tworzenie indeksu plików fontów dla X
 Name:		xorg-app-mkfontscale
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	https://xorg.freedesktop.org/releases/individual/app/mkfontscale-%{version}.tar.bz2
-# Source0-md5:	efd40fd15dc5fc97c7b50cffbc1e7663
+# Source0-md5:	215940de158b1a3d8b3f8b442c606e2f
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
